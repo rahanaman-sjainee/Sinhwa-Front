@@ -11,8 +11,10 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+
   "homepage": "https://rahanaman-sjainee.github.io/Sinhwa-Front/",
   "scripts": {
+    "_comment": "gh-page 브랜치 문제가 발생한다면 node_modules/.cache/gh-pages 를 삭제한 후 다시 진행한다. predeploy, deploy, homepage는 필수 설정",
     "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
