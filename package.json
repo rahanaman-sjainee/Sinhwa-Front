@@ -6,13 +6,15 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "http-proxy-middleware": "^3.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-
-  "homepage": "https://rahanaman-sjainee.github.io/Sinhwa-Front/",
+  "proxy": "http://localhost:8080",
+  "homepage": "https://rahanaman-sjainee.github.io/",
   "scripts": {
     "_comment": "gh-page 브랜치 문제가 발생한다면 node_modules/.cache/gh-pages 를 삭제한 후 다시 진행한다. predeploy, deploy, homepage는 필수 설정",
     "predeploy": "npm run build",

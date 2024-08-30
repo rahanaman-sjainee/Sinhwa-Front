@@ -8,6 +8,10 @@ function Library(props){
             <Book name="a" numOfPage ={200}/>
             <Book name="a" numOfPage ={200}/>
             <Book name="a" numOfPage ={200}/>
+            <form action={"/login"} method={"get"}>
+                <button>a</button>
+            </form>
+
         </div>
     );
 }

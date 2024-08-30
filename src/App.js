@@ -1,25 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import {Route,Routes} from "react-router-dom";
+import React from "react";
+import Library from "./test/Library";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Book from "./test/Book";
+import Login from "./Auth/Login";
+class App extends React.Component{
+
+  constructor(props) {
+    super(props);
+    this.state={};
+  }
+
+  render() {
+    return(
+        <div className="App">
+          <Routes>
+            <Route path = "/" element={<Library/>}></Route>
+            <Route path="/book" element={<Book/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+          </Routes>
+        </div>
+    )
+  }
+
+  componentDidMount() {
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+  }
+  componentWillUnmount() {
+  }
 }
 
 export default App;
