@@ -7,27 +7,52 @@ function Login(){
     const [user,setUser] = useState(null);
     let data = null;
     useEffect(()=>{
-        if(!user) return;
+
+        console.log("do authentication");
+        getIdToken();
+        if(user == null) return;
         console.log("do authentication");
         console.log(user);
         //로그인 시도 후에 일어나는 일들
-        if(user.isSuccess){
-            console.log("success");
-        }
-        else{
-            console.log("fail");
-        }
+        console.log("success");
 
     },[user]);
 
+    function getIdToken(){
+        const response = fetch('/api/login-token', {
+            method: 'GET',
+            credentials: 'include', // 쿠키를 포함하여 요청하기
+        }).then(
+            res =>{
+
+                console.log("test");
+                if(!res.ok){
+
+                    console.log("test ok");
+                    return;
+                    // throw new Error("there si no Token");
+                }
+
+                const token = res.text(); // 서버에서 반환한 토큰을 텍스트로 읽어옴
+                console.log(token);
+                return token;
+            }
+        )
+            .then(res=>setUser(res));
+    }
+
+
+
     async function twitterLogin(){
         console.log("stat");
-        let data = await DoTwitterLogin().then(res => res);
+        let data = await DoTwitterLogin()
+            .then(res => res)
         console.log(data);
+
         //setUser();
     }
     function test(){
-        return fetch("/api",{
+        return fetch("/api/login-token",{
             method:'GET',
             credentials : "include"
         })
